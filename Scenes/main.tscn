@@ -23,17 +23,125 @@ reflected_light_source = 2
 
 [node name="Main" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Track" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Track"]
 mesh = SubResource("BoxMesh_ykggm")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Track/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_biyv1")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Track/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_b5w65")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Track"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5257, 0, 0)
+mesh = SubResource("BoxMesh_ykggm")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Track/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_biyv1")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Track/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D4/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_b5w65")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Track"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9023, 0, 0)
+mesh = SubResource("BoxMesh_ykggm")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Track/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_biyv1")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Track/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D5/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_b5w65")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Track"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9023, 0, -49.2895)
+mesh = SubResource("BoxMesh_ykggm")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Track/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_biyv1")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Track/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D6/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_b5w65")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Track"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.381107, 0, -49.2895)
+mesh = SubResource("BoxMesh_ykggm")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Track/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_biyv1")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Track/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D7/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_b5w65")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Track"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.6163, 0, -49.2895)
+mesh = SubResource("BoxMesh_ykggm")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Track/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_biyv1")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Track/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D8/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_b5w65")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Track"]
+transform = Transform3D(1, 0, 0, 0, 0.929918, 0.367768, 0, -0.367768, 0.929918, 0, 8.64917, 46.4141)
+mesh = SubResource("BoxMesh_ykggm")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Track/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_biyv1")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Track/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D2/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_b5w65")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Track"]
+transform = Transform3D(1, 0, 0, 0, 0.908974, -0.416852, 0, 0.416852, 0.908974, -0.0371466, 7.47716, 92.4162)
+mesh = SubResource("BoxMesh_ykggm")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Track/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_biyv1")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Track/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/MeshInstance3D3/StaticBody3D2"]
 shape = SubResource("ConcavePolygonShape3D_b5w65")
 
 [node name="Car" parent="." instance=ExtResource("1_v5uep")]
