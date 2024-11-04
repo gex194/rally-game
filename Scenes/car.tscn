@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/camera_pivot.gd" id="4_8s2ur"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ucxl"]
-size = Vector3(1.49524, 1.00433, 3.21948)
+size = Vector3(1.39752, 1.00433, 3.21948)
 
 [node name="Car" type="Node3D"]
 
@@ -18,7 +18,7 @@ center_of_mass = Vector3(0, -0.5, 0)
 script = ExtResource("1_8u2tg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.053772, 0.501751, 0.000610352)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00491318, 0.501751, 0.000610352)
 shape = SubResource("BoxShape3D_6ucxl")
 
 [node name="car" parent="Car" instance=ExtResource("1_exxvk")]

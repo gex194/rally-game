@@ -34,7 +34,7 @@ import_script/path=""
 _subresources={
 "materials": {
 "palette.002": {
-"use_external/enabled": true,
+"use_external/enabled": false,
 "use_external/path": "res://Assets/Textures/palette.002.tres"
 }
 }

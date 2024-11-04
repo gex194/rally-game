@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drui4usooo45n"
+uid="uid://du8mc16jd8bba"
 path.s3tc="res://.godot/imported/wheel_wheel.png-c0129f35b5779304059cfeb453924d8a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "fe95fcf4c514fbeb592259e7b94a6b87"
 }
 
 [deps]

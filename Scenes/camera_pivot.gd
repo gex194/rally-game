@@ -1,7 +1,7 @@
 extends Node3D
 
 var direction = Vector3.FORWARD
-@export_range (1,10,0.1) var smooth_speed = 2.5
+@export_range (1,10,0.1) var smooth_speed = 4.5
 
 func _physics_process(delta: float) -> void:
 	var current_velocity = get_parent().get_linear_velocity()
