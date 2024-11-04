@@ -12,7 +12,9 @@ size = Vector3(1.49524, 1.00433, 3.21948)
 
 [node name="Car" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mass = 100.0
+mass = 70.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.5, 0)
 script = ExtResource("1_8u2tg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
@@ -25,6 +27,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="front_left_wheel" type="VehicleWheel3D" parent="Car"]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.763712, 0.0557913, 0.947786)
 use_as_steering = true
+wheel_radius = 0.4
 suspension_stiffness = 70.0
 damping_compression = 1.9
 damping_relaxation = 2.0
@@ -35,6 +38,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.1, 
 [node name="front_right_wheel" type="VehicleWheel3D" parent="Car"]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.808983, 0.0557913, 0.947786)
 use_as_steering = true
+wheel_radius = 0.4
 suspension_stiffness = 70.0
 damping_compression = 1.9
 damping_relaxation = 2.0
@@ -45,6 +49,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1, -
 [node name="rear_left_wheel" type="VehicleWheel3D" parent="Car"]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.763712, 0.0557913, -0.854642)
 use_as_traction = true
+wheel_radius = 0.4
 suspension_stiffness = 70.0
 damping_compression = 1.9
 damping_relaxation = 2.0
@@ -55,6 +60,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.1, 
 [node name="rear_right_wheel" type="VehicleWheel3D" parent="Car"]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.808983, 0.0557913, -0.854642)
 use_as_traction = true
+wheel_radius = 0.4
 suspension_stiffness = 70.0
 damping_compression = 1.9
 damping_relaxation = 2.0
@@ -66,4 +72,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1, -
 script = ExtResource("4_8s2ur")
 
 [node name="camera" type="Camera3D" parent="Car/camera_pivot"]
-transform = Transform3D(-0.998499, 1.44987e-09, -0.0547759, -0.0387594, 0.706613, 0.706538, 0.0387053, 0.7076, -0.705552, 0, 5.86307, -5.1992)
+transform = Transform3D(-0.884202, 0.305131, -0.353669, -0.0387594, 0.706613, 0.706538, 0.465494, 0.63843, -0.612962, -10.4739, 20.977, -17.8284)
+projection = 1
+size = 20.19
+near = 0.03
