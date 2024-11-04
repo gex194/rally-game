@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5ti5c6bermac"]
+[gd_scene load_steps=8 format=3 uid="uid://b5ti5c6bermac"]
 
 [ext_resource type="PackedScene" uid="uid://co1qb60aoc4ot" path="res://Scenes/car.tscn" id="1_v5uep"]
 
@@ -10,6 +10,16 @@ data = PackedVector3Array(-5, 0.25, 5, 5, 0.25, 5, -5, -0.25, 5, 5, 0.25, 5, 5, 
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b5w65"]
 data = PackedVector3Array(-25, 0.25, 25, 25, 0.25, 25, -25, -0.25, 25, 25, 0.25, 25, 25, -0.25, 25, -25, -0.25, 25, 25, 0.25, -25, -25, 0.25, -25, 25, -0.25, -25, -25, 0.25, -25, -25, -0.25, -25, 25, -0.25, -25, 25, 0.25, 25, 25, 0.25, -25, 25, -0.25, 25, 25, 0.25, -25, 25, -0.25, -25, 25, -0.25, 25, -25, 0.25, -25, -25, 0.25, 25, -25, -0.25, -25, -25, 0.25, 25, -25, -0.25, 25, -25, -0.25, -25, 25, 0.25, 25, -25, 0.25, 25, 25, 0.25, -25, -25, 0.25, 25, -25, 0.25, -25, 25, 0.25, -25, -25, -0.25, 25, 25, -0.25, 25, -25, -0.25, -25, 25, -0.25, 25, 25, -0.25, -25, -25, -0.25, -25)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cd3f4"]
+
+[sub_resource type="Sky" id="Sky_c1fr1"]
+sky_material = SubResource("ProceduralSkyMaterial_cd3f4")
+
+[sub_resource type="Environment" id="Environment_7sh71"]
+background_mode = 2
+sky = SubResource("Sky_c1fr1")
+reflected_light_source = 2
 
 [node name="Main" type="Node3D"]
 
@@ -28,8 +38,13 @@ shape = SubResource("ConcavePolygonShape3D_b5w65")
 
 [node name="Car" parent="." instance=ExtResource("1_v5uep")]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.20646, 0)
-light_energy = 2.778
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7sh71")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.841086, 0.540901, 0, -0.540901, 0.841086, 0, 46.5992, 0)
+light_volumetric_fog_energy = 4.048
+light_angular_distance = 3.5
 shadow_enabled = true
-omni_range = 1757.21
+shadow_blur = 6.656
+directional_shadow_blend_splits = true
