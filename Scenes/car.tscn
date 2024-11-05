@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://co1qb60aoc4ot"]
+[gd_scene load_steps=8 format=3 uid="uid://co1qb60aoc4ot"]
 
 [ext_resource type="Script" path="res://Scenes/car.gd" id="1_8u2tg"]
 [ext_resource type="PackedScene" uid="uid://c3m567pjsj0xm" path="res://Assets/car.glb" id="1_exxvk"]
+[ext_resource type="PackedScene" uid="uid://bi62jnktool0v" path="res://Scenes/wheel_smoke.tscn" id="2_aq7ta"]
 [ext_resource type="PackedScene" uid="uid://c47vjyfvk10jf" path="res://Assets/wheel.glb" id="2_maqnm"]
 [ext_resource type="Script" path="res://Scenes/camera_pivot.gd" id="4_8s2ur"]
+[ext_resource type="AudioStream" uid="uid://3wupbn8ckugh" path="res://Assets/Sounds/115656__timbre__remix-of-115271__timbre__synthetic_low_rev_engine.wav" id="6_mh1ou"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ucxl"]
 size = Vector3(1.39752, 1.00433, 3.21948)
@@ -21,6 +23,12 @@ script = ExtResource("1_8u2tg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00491318, 0.501751, 0.000610352)
 shape = SubResource("BoxShape3D_6ucxl")
+
+[node name="left_wheel_smoke" parent="Car" instance=ExtResource("2_aq7ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.491058, 0, -0.969802)
+
+[node name="right_wheel_smoke" parent="Car" instance=ExtResource("2_aq7ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565941, 0, -0.969802)
 
 [node name="car" parent="Car" instance=ExtResource("1_exxvk")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -81,3 +89,9 @@ transform = Transform3D(-0.884202, 0.305131, -0.353669, -0.0387594, 0.706613, 0.
 fov = 55.0
 size = 20.19
 near = 0.03
+
+[node name="engine_sound" type="AudioStreamPlayer3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+stream = ExtResource("6_mh1ou")
+volume_db = -10.0
+autoplay = true

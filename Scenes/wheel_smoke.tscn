@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://bi62jnktool0v"]
+
+[ext_resource type="Texture2D" uid="uid://bvibh6aulocp4" path="res://Assets/Particles/smoke_04.png" id="1_1luq7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jae3g"]
+transparency = 1
+blend_mode = 1
+shading_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_1luq7")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_gja2t"]
+_data = [Vector2(0, 0.467865), 0.0, 1.4, 0, 0, Vector2(0.147844, 1), 0.0, 0.0, 0, 0, Vector2(0.556468, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_efj5y"]
+curve = SubResource("Curve_gja2t")
+
+[sub_resource type="Curve" id="Curve_d6pn6"]
+_data = [Vector2(0, 0.492731), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mln4i"]
+curve = SubResource("Curve_d6pn6")
+
+[sub_resource type="Curve" id="Curve_02hhq"]
+_data = [Vector2(0, 0.0899006), 0.0, 1.4, 0, 0, Vector2(0.942505, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_quyqv"]
+curve = SubResource("Curve_02hhq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ddyrg"]
+angular_velocity_min = -6.00002
+angular_velocity_max = 118.52
+angular_velocity_curve = SubResource("CurveTexture_mln4i")
+gravity = Vector3(0, 1, 0)
+scale_min = 3.97
+scale_max = 5.47
+scale_curve = SubResource("CurveTexture_quyqv")
+color = Color(0.0999861, 0.099986, 0.099986, 1)
+alpha_curve = SubResource("CurveTexture_efj5y")
+
+[sub_resource type="QuadMesh" id="QuadMesh_uehk4"]
+
+[node name="WheelSmoke" type="GPUParticles3D"]
+material_override = SubResource("StandardMaterial3D_jae3g")
+emitting = false
+amount = 40
+lifetime = 2.55
+process_material = SubResource("ParticleProcessMaterial_ddyrg")
+draw_pass_1 = SubResource("QuadMesh_uehk4")
