@@ -3,9 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://bvibh6aulocp4" path="res://Assets/Particles/smoke_04.png" id="1_1luq7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jae3g"]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.128
+alpha_antialiasing_mode = 0
 blend_mode = 1
-shading_mode = 2
+cull_mode = 2
+depth_draw_mode = 2
+shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_1luq7")
 billboard_mode = 3
@@ -40,8 +44,8 @@ angular_velocity_min = -6.00002
 angular_velocity_max = 118.52
 angular_velocity_curve = SubResource("CurveTexture_mln4i")
 gravity = Vector3(0, 1, 0)
-scale_min = 3.97
-scale_max = 5.47
+scale_min = 0.0
+scale_max = 3.87
 scale_curve = SubResource("CurveTexture_quyqv")
 color = Color(0.0999861, 0.099986, 0.099986, 1)
 alpha_curve = SubResource("CurveTexture_efj5y")
@@ -50,8 +54,10 @@ alpha_curve = SubResource("CurveTexture_efj5y")
 
 [node name="WheelSmoke" type="GPUParticles3D"]
 material_override = SubResource("StandardMaterial3D_jae3g")
+cast_shadow = 0
 emitting = false
 amount = 40
 lifetime = 2.55
+visibility_aabb = AABB(-1, -1, -1, 2, 5.36362, 2)
 process_material = SubResource("ParticleProcessMaterial_ddyrg")
 draw_pass_1 = SubResource("QuadMesh_uehk4")

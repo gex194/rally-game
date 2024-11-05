@@ -8,6 +8,9 @@ var max_torque = 300
 @onready var rear_left_wheel: VehicleWheel3D = get_node("rear_left_wheel")
 @onready var rear_right_wheel: VehicleWheel3D = get_node("rear_right_wheel")
 
+@onready var left_light: SpotLight3D = get_node("left_light")
+@onready var right_light: SpotLight3D = get_node("right_light")
+
 @onready var engine_sound: AudioStreamPlayer3D = get_node("engine_sound")
 @export_range (1,15,0.1) var steering_speed = 3
 
@@ -18,10 +21,11 @@ func _physics_process(delta: float) -> void:
 	rear_left_wheel.engine_force = acceleration * max_torque * (1 - abs(rpm) / max_rpm)
 	rpm = rear_right_wheel.get_rpm()
 	rear_right_wheel.engine_force = acceleration * max_torque * (1 - abs(rpm) / max_rpm)
-	if (Input.is_action_pressed("Reset")):
-		reset_position()
+
+	handle_reset_position()
 	handle_emitters(acceleration, rpm)
 	handle_engine_sound(rpm)
+	handle_lights()
 
 func handle_emitters(acceleration, rpm) -> void:
 	if (acceleration && rpm < 150 && rear_left_wheel.is_in_contact() && rear_right_wheel.is_in_contact()):
@@ -31,10 +35,16 @@ func handle_emitters(acceleration, rpm) -> void:
 		left_wheel_smoke.emitting = false;
 		right_wheel_smoke.emitting = false;
 
+func handle_lights() -> void:
+	if (Input.is_action_just_pressed("Lights")):
+		left_light.visible = !left_light.visible
+		right_light.visible = !right_light.visible
+
 func handle_engine_sound(rpm) -> void:
 	if (abs(rpm) > 0.0):
 		engine_sound.pitch_scale = abs(rpm) / 200;
 
-func reset_position() -> void:
-	self.position = Vector3(0,2,0)
-	self.rotation = Vector3(0,0,0)
+func handle_reset_position() -> void:
+	if (Input.is_action_just_pressed("Reset")):
+		self.position = Vector3(0,2,0)
+		self.rotation = Vector3(0,0,0)

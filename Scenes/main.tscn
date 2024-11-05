@@ -23,6 +23,9 @@ reflected_light_source = 2
 
 [node name="Main" type="Node3D"]
 
+[node name="Car" parent="." instance=ExtResource("1_v5uep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04905, 0)
+
 [node name="Track" type="Node3D" parent="."]
 
 [node name="borders" type="Node3D" parent="Track"]
@@ -286,8 +289,6 @@ transform = Transform3D(-0.999719, 0, -0.0237168, 0, 1, 0, 0.0237168, 0, -0.9997
 use_collision = true
 size = Vector3(24.3182, 1.6985, 98.7242)
 material = ExtResource("2_ecl1i")
-
-[node name="Car" parent="." instance=ExtResource("1_v5uep")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7sh71")
