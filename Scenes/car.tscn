@@ -19,16 +19,17 @@ center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.5, 0)
 brake = 0.7
 script = ExtResource("1_8u2tg")
+steering_speed = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00491318, 0.501751, 0.000610352)
 shape = SubResource("BoxShape3D_6ucxl")
 
 [node name="left_wheel_smoke" parent="Car" instance=ExtResource("2_aq7ta")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.491058, 0, -0.969802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.685256, 0, -0.969802)
 
 [node name="right_wheel_smoke" parent="Car" instance=ExtResource("2_aq7ta")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565941, 0, -0.969802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831962, 0, -0.969802)
 
 [node name="car" parent="Car" instance=ExtResource("1_exxvk")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -37,8 +38,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.763712, 0.0557913, 0.947786)
 brake = 0.7
 use_as_steering = true
+wheel_roll_influence = 0.5
 wheel_radius = 0.4
-suspension_stiffness = 70.0
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
@@ -49,8 +52,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.1, 
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.808983, 0.0557913, 0.947786)
 brake = 0.7
 use_as_steering = true
+wheel_roll_influence = 0.5
 wheel_radius = 0.4
-suspension_stiffness = 70.0
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
@@ -61,8 +66,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1, -
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.763712, 0.0557913, -0.854642)
 brake = 0.7
 use_as_traction = true
+wheel_roll_influence = 0.5
 wheel_radius = 0.4
-suspension_stiffness = 70.0
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
@@ -73,8 +80,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.1, 
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.808983, 0.0557913, -0.854642)
 brake = 0.7
 use_as_traction = true
+wheel_roll_influence = 0.5
 wheel_radius = 0.4
-suspension_stiffness = 70.0
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
@@ -91,7 +100,7 @@ size = 20.19
 near = 0.03
 
 [node name="engine_sound" type="AudioStreamPlayer3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56822, 1.00855)
 stream = ExtResource("6_mh1ou")
 volume_db = -10.0
 autoplay = true
