@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://cvvmimydlxrqb"]
+
+[ext_resource type="Texture2D" uid="uid://1f1ajpw2atjn" path="res://Assets/Textures/RoughAsphalt/Rough_Asphalt_wjvnagr_1K_BaseColor.jpg" id="1_tnfmr"]
+[ext_resource type="Texture2D" uid="uid://rf4rkdmcmp3g" path="res://Assets/Textures/RoughAsphalt/Rough_Asphalt_wjvnagr_1K_AO.jpg" id="2_jtuxy"]
+[ext_resource type="Texture2D" uid="uid://cxs3grxvr1q1o" path="res://Assets/Textures/RoughAsphalt/Rough_Asphalt_wjvnagr_1K_Specular.jpg" id="3_pauk8"]
+[ext_resource type="Texture2D" uid="uid://c4ts3aebrxnyp" path="res://Assets/Textures/RoughAsphalt/Rough_Asphalt_wjvnagr_1K_Normal.jpg" id="4_dmu70"]
+[ext_resource type="Texture2D" uid="uid://2chgssukichm" path="res://Assets/Textures/RoughAsphalt/Rough_Asphalt_wjvnagr_1K_Gloss.jpg" id="5_i5j38"]
+[ext_resource type="Texture2D" uid="uid://boadsah2npfoc" path="res://Assets/Textures/RoughAsphalt/Rough_Asphalt_wjvnagr_1K_Roughness.jpg" id="6_32cp4"]
+
+[resource]
+albedo_texture = ExtResource("1_tnfmr")
+metallic = 1.0
+metallic_texture = ExtResource("3_pauk8")
+roughness_texture = ExtResource("6_32cp4")
+normal_enabled = true
+normal_texture = ExtResource("4_dmu70")
+rim_enabled = true
+rim_texture = ExtResource("5_i5j38")
+ao_enabled = true
+ao_texture = ExtResource("2_jtuxy")
+refraction_enabled = true
+refraction_texture = ExtResource("5_i5j38")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true

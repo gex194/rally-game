@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://crmfj2ed3wblu"]
+
+[ext_resource type="Texture2D" uid="uid://bww4uqpml4qkk" path="res://Assets/Textures/WildGrass/Wild_Grass_xbreagf_1K_BaseColor.jpg" id="1_k3qx6"]
+[ext_resource type="Texture2D" uid="uid://bd2dn4blmvr2p" path="res://Assets/Textures/WildGrass/Wild_Grass_xbreagf_1K_AO.jpg" id="2_3pwqu"]
+[ext_resource type="Texture2D" uid="uid://cdvricvvlqwqn" path="res://Assets/Textures/WildGrass/Wild_Grass_xbreagf_1K_Normal.jpg" id="3_36k3x"]
+[ext_resource type="Texture2D" uid="uid://bbf4674p068el" path="res://Assets/Textures/WildGrass/Wild_Grass_xbreagf_1K_Roughness.jpg" id="4_n1t5x"]
+
+[resource]
+albedo_texture = ExtResource("1_k3qx6")
+roughness_texture = ExtResource("4_n1t5x")
+normal_enabled = true
+normal_texture = ExtResource("3_36k3x")
+anisotropy = 0.25
+ao_enabled = true
+ao_texture = ExtResource("2_3pwqu")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+grow_amount = 0.243
+point_size = 128.0
