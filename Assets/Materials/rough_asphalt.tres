@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://boadsah2npfoc" path="res://Assets/Textures/RoughAsphalt/Rough_Asphalt_wjvnagr_1K_Roughness.jpg" id="6_32cp4"]
 
 [resource]
+transparency = 4
+depth_draw_mode = 2
 albedo_texture = ExtResource("1_tnfmr")
 metallic = 1.0
 metallic_texture = ExtResource("3_pauk8")
