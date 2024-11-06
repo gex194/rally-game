@@ -44,8 +44,6 @@ radial_accel_max = -2.23517e-06
 scale_min = 0.8
 scale_curve = SubResource("CurveTexture_im4a4")
 alpha_curve = SubResource("CurveTexture_io8pv")
-turbulence_enabled = true
-collision_mode = 2
 collision_use_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_tocbw"]
@@ -53,7 +51,7 @@ collision_use_scale = true
 [node name="exhaust_smoke" type="GPUParticles3D"]
 material_override = SubResource("StandardMaterial3D_idsil")
 cast_shadow = 0
-amount = 40
+amount = 20
 collision_base_size = 1.93
 visibility_aabb = AABB(-1.24418, -1.00733, -1.21025, 2.56094, 2.50673, 2.43912)
 process_material = SubResource("ParticleProcessMaterial_jv3p7")
