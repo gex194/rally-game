@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://co1qb60aoc4ot"]
+[gd_scene load_steps=11 format=3 uid="uid://co1qb60aoc4ot"]
 
-[ext_resource type="Script" path="res://Scenes/car.gd" id="1_8u2tg"]
+[ext_resource type="Script" path="res://Scripts/car.gd" id="1_8u2tg"]
 [ext_resource type="PackedScene" uid="uid://c3m567pjsj0xm" path="res://Assets/car.glb" id="1_exxvk"]
 [ext_resource type="PackedScene" uid="uid://bi62jnktool0v" path="res://Scenes/wheel_smoke.tscn" id="2_aq7ta"]
 [ext_resource type="PackedScene" uid="uid://c47vjyfvk10jf" path="res://Assets/wheel.glb" id="2_maqnm"]
 [ext_resource type="PackedScene" uid="uid://hkilbkuk31gi" path="res://Scenes/exhaust_smoke.tscn" id="3_dtxn4"]
-[ext_resource type="Script" path="res://Scenes/camera_pivot.gd" id="4_8s2ur"]
+[ext_resource type="Script" path="res://Scripts/camera_pivot.gd" id="4_8s2ur"]
 [ext_resource type="AudioStream" uid="uid://3wupbn8ckugh" path="res://Assets/Sounds/115656__timbre__remix-of-115271__timbre__synthetic_low_rev_engine.wav" id="6_mh1ou"]
+[ext_resource type="PackedScene" uid="uid://cmss58n3qiilx" path="res://Scenes/navigation.tscn" id="8_1emqo"]
+[ext_resource type="Script" path="res://Scripts/navigation.gd" id="9_7qehc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ucxl"]
 size = Vector3(1.39752, 1.00433, 3.21948)
@@ -15,6 +17,7 @@ size = Vector3(1.39752, 1.00433, 3.21948)
 
 [node name="Car" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 3
 mass = 70.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.5, 0)
@@ -30,6 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831962, 0.0928752, -1.1899
 
 [node name="exhaust_smoke" parent="Car" instance=ExtResource("3_dtxn4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.496592, 0, -1.62759)
+emitting = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00491318, 0.501751, 0.000610352)
@@ -43,7 +47,7 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.763712, 0.0557913,
 brake = 0.7
 use_as_steering = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.4
+wheel_radius = 0.7
 wheel_friction_slip = 3.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
@@ -57,7 +61,7 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.808983, 0.0557913
 brake = 0.7
 use_as_steering = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.4
+wheel_radius = 0.7
 wheel_friction_slip = 3.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
@@ -71,7 +75,7 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.763712, 0.0557913,
 brake = 0.7
 use_as_traction = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.4
+wheel_radius = 0.7
 wheel_friction_slip = 3.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
@@ -85,7 +89,7 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.808983, 0.0557913
 brake = 0.7
 use_as_traction = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.4
+wheel_radius = 0.7
 wheel_friction_slip = 3.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
@@ -112,8 +116,8 @@ autoplay = true
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.407273, 0.49529, 1.53446)
 light_energy = 6.0
 light_size = 0.3
-shadow_enabled = true
 distance_fade_enabled = true
+editor_only = true
 spot_range = 15.0
 spot_angle = 30.0
 
@@ -121,7 +125,12 @@ spot_angle = 30.0
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.500536, 0.49529, 1.53446)
 light_energy = 6.0
 light_size = 0.3
-shadow_enabled = true
 distance_fade_enabled = true
+editor_only = true
 spot_range = 15.0
 spot_angle = 30.0
+
+[node name="navigation" parent="Car" node_paths=PackedStringArray("main") instance=ExtResource("8_1emqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("9_7qehc")
+main = NodePath("../..")
